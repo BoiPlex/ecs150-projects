@@ -42,6 +42,7 @@ void LocalFileSystem::writeInodeRegion(super_t *super, inode_t *inodes) {
 }
 
 int LocalFileSystem::lookup(int parentInodeNumber, string name) {
+  
   return 0;
 }
 
