@@ -51,7 +51,9 @@ void FileService::get(HTTPRequest *request, HTTPResponse *response) {
 
 string FileService::readFile(string path) {
   int fd = open(path.c_str(), O_RDONLY);
-  if (fd < 0) {
+
+  if (fd < 0 || path.find("..") != string::npos) {
+    cout << "HELLO??" << endl;
     return "";
   }
 
