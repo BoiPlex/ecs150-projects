@@ -17,12 +17,20 @@ int main(int argc, char *argv[]) {
   }
 
   // Parse command line arguments
-  /*
-  Disk *disk = new Disk(argv[1], UFS_BLOCK_SIZE);
-  LocalFileSystem *fileSystem = new LocalFileSystem(disk);
-  int parentInode = stoi(argv[2]);
-  string entryName = string(argv[3]);
-  */
+  
+  // Disk *disk = new Disk(argv[1], UFS_BLOCK_SIZE);
+  // LocalFileSystem *fileSystem = new LocalFileSystem(disk);
+  // int parentInode = stoi(argv[2]);
+  // string entryName = string(argv[3]);
+  
+  // if (fileSystem->unlink(parentInode, entryName) != 0) {
+  //   cerr << "Error unable to remove entry (look up the write string)" << endl;
+  //   delete disk;
+  //   delete fileSystem;
+  //   return 1;
+  // }
 
+  // delete disk;
+  // delete fileSystem;
   return 0;
 }

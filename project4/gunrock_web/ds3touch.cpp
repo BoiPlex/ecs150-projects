@@ -8,6 +8,11 @@
 
 using namespace std;
 
+void printStandardError() {
+  cerr << "Error creating file" << endl;
+}
+
+
 int main(int argc, char *argv[]) {
   if (argc != 4) {
     cerr << argv[0] << ": diskImageFile parentInode fileName" << endl;

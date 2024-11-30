@@ -8,6 +8,11 @@
 
 using namespace std;
 
+void printStandardError() {
+  cerr << "Error creating directory" << endl;
+}
+
+
 int main(int argc, char *argv[]) {
   if (argc != 4) {
     cerr << argv[0] << ": diskImageFile parentInode directory" << endl;
@@ -17,12 +22,19 @@ int main(int argc, char *argv[]) {
   }
 
   // Parse command line arguments
-  /*
   Disk *disk = new Disk(argv[1], UFS_BLOCK_SIZE);
   LocalFileSystem *fileSystem = new LocalFileSystem(disk);
-  int parentInode = stoi(argv[2]);
-  string directory = string(argv[3]);
-  */
-  
+  int parentInodeNum = stoi(argv[2]);
+  string directoryName = string(argv[3]);
+
+  if (fileSystem->create(parentInodeNum, UFS_DIRECTORY, directoryName)) {
+    printStandardError();
+    delete disk;
+    delete fileSystem;
+    return 1;
+  }
+
+  delete disk;
+  delete fileSystem;
   return 0;
 }
